@@ -1,0 +1,18 @@
+<h2>Quejas Ingenia</h2>
+<div *ngFor="let product of products">
+  - {{product.name}} {{product.priority}}
+  </div>
+<br>
+<form [formGroup]='product' (ngSubmit)="onSubmit()"> 
+  <label for="name">Queja</label>
+  <input type="text" formControlName="name">
+    <label for="name">Prioridad</label>
+  <input type="text" formControlName="priority">
+  <input type="submit">
+  <div *ngIf="this.product.get('name').hasError('required')">Niño introduse la keja</div>
+</form>
+<!-- 
+Copyright Google LLC. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
